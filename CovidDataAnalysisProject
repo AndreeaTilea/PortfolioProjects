@@ -2,13 +2,13 @@ SELECT *
 FROM
   `elevated-server-347503.Covid.covid_deaths`
 ORDER BY
- 3,4
+ 3,4;
 
 SELECT *
 FROM 
   `elevated-server-347503.Covid.covid_vaccinations`
 ORDER BY
-3,4
+3,4;
 
 SELECT
   location,
@@ -20,7 +20,7 @@ SELECT
 FROM
   `elevated-server-347503.Covid.covid_deaths`
 ORDER BY 
-  1,2
+  1,2;
 
 -- Looking At Total Cases vs Total Deaths
 -- Shows likehood of dying from contracting covid in your country
@@ -36,7 +36,7 @@ WHERE
   location = "United States"
   AND continent is not null
 ORDER BY
-  1,2
+  1,2;
 
 -- Looking at Total Cases vs Population
 -- Shows what percentage of population got Covid
@@ -49,7 +49,7 @@ SELECT
 FROM
   `elevated-server-347503.Covid.covid_deaths`
 ORDER BY 
-  1,2
+  1,2;
 
 
 -- Looking at countires with highest infection rates compared to population
@@ -63,7 +63,7 @@ FROM
 GROUP BY
   location, population
 ORDER BY 
-  PercentPopulationInfected DESC
+  PercentPopulationInfected DESC;
 
 --Looking at countries with highest death count per population
 SELECT
@@ -77,7 +77,7 @@ WHERE
 GROUP BY
   location
 ORDER BY
-  TotalDeathCount DESC
+  TotalDeathCount DESC;
 
 -- Continents with highest death count per population
 SELECT
@@ -91,7 +91,7 @@ WHERE
 GROUP BY
   continent
 ORDER BY
-  TotalDeathCount DESC
+  TotalDeathCount DESC;
 
 -- Global Numbers
 SELECT
@@ -104,7 +104,7 @@ WHERE
   continent IS NOT NULL
 --GROUP BY date
 ORDER BY
-  1,2
+  1,2;
 
 -- Total population vs vaccinations
 SELECT
