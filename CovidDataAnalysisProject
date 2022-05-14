@@ -122,22 +122,3 @@ ON
   dea.date = vac.date
 WHERE
   dea.continent IS NOT NULL;
-
--- Creating view for later visulization
-SELECT
-  dea.continent,
-  dea.location,
-  dea.date,
-  dea.population,
-  vac.new_vaccinations,
-  SUM(vac.new_vaccinations) OVER (PARTITION BY dea.location ORDER BY CAST(dea.location AS STRING), dea.date) AS RollingPeopleVaccinated
-FROM
-  `elevated-server-347503.Covid.covid_deaths` AS dea
-JOIN
-  `elevated-server-347503.Covid.covid_vaccinations` AS vac
-ON
-  dea.location = vac.location
-AND
-  dea.date = vac.date
-WHERE
-  dea.continent IS NOT NULL
